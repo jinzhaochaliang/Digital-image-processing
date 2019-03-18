@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>787</width>
+    <height>619</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGraphicsView" name="graphicsView"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="openButton">
+        <property name="text">
+         <string>OPEN</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="resetButton">
+        <property name="text">
+         <string>RESET</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="lastButton">
+        <property name="text">
+         <string>&lt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nextButton">
+        <property name="text">
+         <string>&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>787</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>true</bool>
+   </property>
+   <widget class="QMenu" name="menuImagePro">
+    <property name="title">
+     <string>ImagePro</string>
+    </property>
+    <addaction name="actionrgb2gray"/>
+    <addaction name="actionlog"/>
+    <addaction name="actionreverse"/>
+    <addaction name="actioncontrast"/>
+    <addaction name="actionhisbalance"/>
+    <addaction name="actionhisrgbbalance"/>
+   </widget>
+   <widget class="QMenu" name="menuSpaceFilter">
+    <property name="title">
+     <string>SpaceFilter</string>
+    </property>
+    <addaction name="actionLinear"/>
+   </widget>
+   <addaction name="menuImagePro"/>
+   <addaction name="menuSpaceFilter"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionrgb2gray">
+   <property name="text">
+    <string>rgb2gray</string>
+   </property>
+  </action>
+  <action name="actionlog">
+   <property name="text">
+    <string>log</string>
+   </property>
+  </action>
+  <action name="actionreverse">
+   <property name="text">
+    <string>reverse</string>
+   </property>
+  </action>
+  <action name="actioncontrast">
+   <property name="text">
+    <string>contrast</string>
+   </property>
+  </action>
+  <action name="actionhisbalance">
+   <property name="text">
+    <string>hisbalance</string>
+   </property>
+  </action>
+  <action name="actionhisrgbbalance">
+   <property name="text">
+    <string>hisrgbbalance</string>
+   </property>
+  </action>
+  <action name="actionLinear">
+   <property name="text">
+    <string>Linear</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,65 @@
+<RCC>
+    <qresource prefix="/qss">
+        <file>css.qss</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>ic_music_thumb.png</file>
+    </qresource>
+    <qresource prefix="/face">
+        <file>face/face1.png</file>
+        <file>face/face2.png</file>
+        <file>face/face3.png</file>
+        <file>face/face4.png</file>
+        <file>face/face5.png</file>
+        <file>face/face6.png</file>
+        <file>face/face7.png</file>
+        <file>face/face8.png</file>
+        <file>face/face9.png</file>
+        <file>face/face10.png</file>
+        <file>face/face11.png</file>
+        <file>face/face12.png</file>
+        <file>face/face13.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1">
+        <file>pic/add.jpg</file>
+        <file>pic/撤销.jpg</file>
+        <file>pic/logo.jpg</file>
+        <file>pic/亮度.png</file>
+        <file>pic/高光减淡.png</file>
+        <file>pic/色温.png</file>
+        <file>pic/阴影补偿.png</file>
+        <file>pic/饱和度.png</file>
+        <file>pic/对比度.png</file>
+        <file>pic/虚化.png</file>
+        <file>pic/调整.jpg</file>
+        <file>pic/add.png</file>
+        <file>pic/撤销.png</file>
+        <file>pic/上一步.png</file>
+        <file>pic/退出.png</file>
+        <file>pic/下一步.png</file>
+        <file>pic/save.png</file>
+        <file>pic/白平衡.png</file>
+        <file>pic/锐化.png</file>
+        <file>pic/调整.png</file>
+        <file>pic/旋转.png</file>
+        <file>pic/eye.png</file>
+        <file>pic/美白.png</file>
+        <file>pic/磨皮.png</file>
+        <file>pic/瘦脸.png</file>
+        <file>pic/original.jpg</file>
+        <file>pic/浮雕.jpg</file>
+        <file>pic/黑白.JPG</file>
+        <file>pic/怀旧.JPG</file>
+        <file>pic/卡通.jpg</file>
+        <file>pic/亮斑.JPG</file>
+        <file>pic/毛玻璃.JPG</file>
+        <file>pic/木刻.JPG</file>
+        <file>pic/素描.jpg</file>
+        <file>pic/碎片.JPG</file>
+        <file>pic/线条.JPG</file>
+        <file>pic/绘画.png</file>
+        <file>pic/chrismas.png</file>
+        <file>pic/meng.png</file>
+        <file>pic/colortran.jpg</file>
+    </qresource>
+</RCC>

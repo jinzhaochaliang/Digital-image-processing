@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="elegantimage.qrc">
+    <normaloff>:/new/prefix1/pic/logo.jpg</normaloff>:/new/prefix1/pic/logo.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="Imagelabel">
+    <property name="geometry">
+     <rect>
+      <x>45</x>
+      <y>65</y>
+      <width>500</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Updatelabel">
+    <property name="geometry">
+     <rect>
+      <x>655</x>
+      <y>65</y>
+      <width>500</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>270</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/add.jpg</normaloff>:/new/prefix1/pic/add.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="glass">
+    <property name="geometry">
+     <rect>
+      <x>721</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/毛玻璃.JPG</normaloff>:/new/prefix1/pic/毛玻璃.JPG</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="swell">
+    <property name="geometry">
+     <rect>
+      <x>921</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/亮斑.JPG</normaloff>:/new/prefix1/pic/亮斑.JPG</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cartoon">
+    <property name="geometry">
+     <rect>
+      <x>1021</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/卡通.jpg</normaloff>:/new/prefix1/pic/卡通.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="black">
+    <property name="geometry">
+     <rect>
+      <x>121</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/黑白.JPG</normaloff>:/new/prefix1/pic/黑白.JPG</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="laststep">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>620</y>
+      <width>56</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/撤销.jpg</normaloff>:/new/prefix1/pic/撤销.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>56</width>
+      <height>56</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="original">
+    <property name="geometry">
+     <rect>
+      <x>21</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/original.jpg</normaloff>:/new/prefix1/pic/original.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="relievo">
+    <property name="geometry">
+     <rect>
+      <x>221</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/浮雕.jpg</normaloff>:/new/prefix1/pic/浮雕.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="binaryzation">
+    <property name="geometry">
+     <rect>
+      <x>421</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/木刻.JPG</normaloff>:/new/prefix1/pic/木刻.JPG</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="line">
+    <property name="geometry">
+     <rect>
+      <x>621</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/线条.JPG</normaloff>:/new/prefix1/pic/线条.JPG</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="corrosion">
+    <property name="geometry">
+     <rect>
+      <x>821</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/碎片.JPG</normaloff>:/new/prefix1/pic/碎片.JPG</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reminiscence">
+    <property name="geometry">
+     <rect>
+      <x>321</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/怀旧.JPG</normaloff>:/new/prefix1/pic/怀旧.JPG</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sketch">
+    <property name="geometry">
+     <rect>
+      <x>521</x>
+      <y>601</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="elegantimage.qrc">
+      <normaloff>:/new/prefix1/pic/素描.jpg</normaloff>:/new/prefix1/pic/素描.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="elegantimage.qrc"/>
+ </resources>
+ <connections/>
+</ui>

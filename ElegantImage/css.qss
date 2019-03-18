@@ -1,0 +1,77 @@
+QMainWindow, QDialog{
+    background:#fff;
+}
+
+QMenuBar{
+    background:#e5d8fd;
+    border: 1px solid rgb(111, 156, 207);
+    border-left: none;
+    border-right: none;
+}
+QMenuBar::item {
+        border: 1px solid transparent;
+        padding: 5px 10px 5px 10px;
+        background: transparent;
+}
+QMenuBar::item:enabled {
+        color: #7109aa;
+}
+QMenuBar::item:enabled:selected {
+        border-top-color: rgb(111, 156, 207);
+        border-bottom-color: rgb(111, 156, 207);
+        background: rgb(198, 224, 252);
+        color: #48036f;
+}
+
+QMenu
+{
+background:#e5d7fd;
+color:#6437b5;
+}
+
+QMenu::item:selected
+{
+ background:#7109aa;
+ color:#fff;
+}
+
+
+
+
+QPushButton,QToolButton{
+        border-radius:5px;
+        color:#6f3fc3;
+}
+
+QPushButton:hover{
+        background:#ad66d5;
+}
+
+QPushButton:hover:pressed{
+        background:#8a2be2;
+}
+
+
+
+QSlider::add-page:Horizontal
+{
+       background-color: rgb(87, 97, 106);
+       height:4px;
+}
+QSlider::sub-page:Horizontal
+{
+       background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(231,80,229, 255), stop:1 rgba(7,208,255, 255));
+       height:4px;
+}
+QSlider::groove:Horizontal
+{
+       background:transparent;
+       height:6px;
+}
+QSlider::handle:Horizontal
+{
+       height: 30px;
+       width:8px;
+       border-image: url(:/images/ic_music_thumb.png);
+       margin: -8 0px;
+}
