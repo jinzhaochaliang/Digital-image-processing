@@ -250,6 +250,11 @@ QImage ImageProcessor::linearFilter(const QImage& img,std::vector<double> data,i
 
     QSize q(w+nCol-1,h+nRow-1);
     QImage tempimg(q,img.format());
+    for(int i=0;i<tempimg.width();i++){
+        for(int j=0;j<tempimg.height();j++){
+            tempimg.setPixel(i,j,0);
+        }
+    }
     for(int i=0;i<w;i++){
         for(int j=0;j<h;j++){
             tempimg.setPixel(i+nCol/2,j+nRow/2,img.pixel(i,j));
@@ -328,12 +333,13 @@ QImage ImageProcessor::linearFilter(const QImage& img,std::vector<double> data,i
         }
     }
     //crop
+//    return tempimg;
     return ret;
 }
 
 QImage ImageProcessor::linearFilter(const QImage& img,std::vector<double> data,int nCol,int num1,int num2){
     if(num2 == 0){
-        return linearFilter(img,data,nCol,num1);
+        return linearFilter(rgb2Gray(img),data,nCol,num1);
     }else{
         QImage tempred(img);
         QImage tempgreen(img);
