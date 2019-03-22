@@ -87,8 +87,13 @@
      <string>SpaceFilter</string>
     </property>
     <addaction name="actionLinear"/>
+    <addaction name="separator"/>
     <addaction name="actionGauss"/>
     <addaction name="actionBilateral"/>
+    <addaction name="separator"/>
+    <addaction name="actionMedian"/>
+    <addaction name="actionEroding"/>
+    <addaction name="actionDilating"/>
    </widget>
    <addaction name="menuImagePro"/>
    <addaction name="menuSpaceFilter"/>
@@ -145,6 +150,21 @@
   <action name="actionBilateral">
    <property name="text">
     <string>Bilateral</string>
+   </property>
+  </action>
+  <action name="actionMedian">
+   <property name="text">
+    <string>Median</string>
+   </property>
+  </action>
+  <action name="actionEroding">
+   <property name="text">
+    <string>Eroding</string>
+   </property>
+  </action>
+  <action name="actionDilating">
+   <property name="text">
+    <string>Dilating</string>
    </property>
   </action>
  </widget>

@@ -3,6 +3,7 @@
 #include <QDebug>
 using std::vector;
 using std::map;
+#include "algorithm"
 
 ImageProcessor::ImageProcessor()
 {
@@ -446,6 +447,174 @@ QImage ImageProcessor::BilateralTransform(const QImage& img,int l,double s,doubl
             if(sum<0) sum=0;
             if(sum>255) sum=255;
             ret.setPixel(i-l/2,j-l/2,qRgb(sum,sum,sum));
+        }
+    }
+
+    return ret;
+}
+
+QImage ImageProcessor::MedianTransform(const QImage& img,int l){
+    QImage ret(img);
+
+    int w=ret.width();
+    int h=ret.height();
+    if(l%2==0){
+        qDebug()<<"should be odd";
+        return img;
+    }
+
+    QSize q(w+l,h+l-1);
+    QImage tempimg(q,img.format());
+
+    for(int i=0;i<w;i++){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i+l/2,j+l/2,img.pixel(i,j));
+        }
+    }
+
+    for(int i=l/2-1;i>=0;i--){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i,j+l/2,img.pixel(0,j));
+        }
+    }
+    for(int i=l/2+w;i<w+l-1;i++){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i,j+l/2,img.pixel(w-1,j));
+        }
+    }
+    for(int i=0;i<w+l-1;i++){
+        for(int j=l/2-1;j>=0;j--){
+            tempimg.setPixel(i,j,tempimg.pixel(i,l/2));
+        }
+    }
+    for(int i=0;i<w+l-1;i++){
+        for(int j=h+l/2-1;j<h+l-1;j++){
+            tempimg.setPixel(i,j,tempimg.pixel(i,h+l/2-1));
+        }
+    }
+
+    for(int i=l/2;i<w+l/2;i++){
+        for(int j=l/2;j<h+l/2;j++){
+            QRect rect(i-l/2,j-l/2,l,l);
+            QImage patch=tempimg.copy(rect);
+            vector<int> data;
+            for(int k=0;k<l*l;k++){
+                data.push_back(qGray(patch.pixel(k/l,k%l)));
+            }
+            std::sort(data.begin(),data.end());
+            ret.setPixel(i-l/2,j-l/2,qRgb(data[l*l/2],data[l*l/2],data[l*l/2]));
+        }
+    }
+
+    return ret;
+}
+
+QImage ImageProcessor::ErodingTransform(const QImage& img,int l){
+    QImage ret(img);
+
+    int w=ret.width();
+    int h=ret.height();
+    if(l%2==0){
+        qDebug()<<"should be odd";
+        return img;
+    }
+
+    QSize q(w+l,h+l-1);
+    QImage tempimg(q,img.format());
+
+    for(int i=0;i<w;i++){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i+l/2,j+l/2,img.pixel(i,j));
+        }
+    }
+
+    for(int i=l/2-1;i>=0;i--){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i,j+l/2,img.pixel(0,j));
+        }
+    }
+    for(int i=l/2+w;i<w+l-1;i++){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i,j+l/2,img.pixel(w-1,j));
+        }
+    }
+    for(int i=0;i<w+l-1;i++){
+        for(int j=l/2-1;j>=0;j--){
+            tempimg.setPixel(i,j,tempimg.pixel(i,l/2));
+        }
+    }
+    for(int i=0;i<w+l-1;i++){
+        for(int j=h+l/2-1;j<h+l-1;j++){
+            tempimg.setPixel(i,j,tempimg.pixel(i,h+l/2-1));
+        }
+    }
+
+    for(int i=l/2;i<w+l/2;i++){
+        for(int j=l/2;j<h+l/2;j++){
+            QRect rect(i-l/2,j-l/2,l,l);
+            QImage patch=tempimg.copy(rect);
+            vector<int> data;
+            for(int k=0;k<l*l;k++){
+                data.push_back(qGray(patch.pixel(k/l,k%l)));
+            }
+            std::sort(data.begin(),data.end());
+            ret.setPixel(i-l/2,j-l/2,qRgb(data.front(),data.front(),data.front()));
+        }
+    }
+
+    return ret;
+}
+
+QImage ImageProcessor::DilatingTransform(const QImage& img,int l){
+    QImage ret(img);
+
+    int w=ret.width();
+    int h=ret.height();
+    if(l%2==0){
+        qDebug()<<"should be odd";
+        return img;
+    }
+
+    QSize q(w+l,h+l-1);
+    QImage tempimg(q,img.format());
+
+    for(int i=0;i<w;i++){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i+l/2,j+l/2,img.pixel(i,j));
+        }
+    }
+
+    for(int i=l/2-1;i>=0;i--){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i,j+l/2,img.pixel(0,j));
+        }
+    }
+    for(int i=l/2+w;i<w+l-1;i++){
+        for(int j=0;j<h;j++){
+            tempimg.setPixel(i,j+l/2,img.pixel(w-1,j));
+        }
+    }
+    for(int i=0;i<w+l-1;i++){
+        for(int j=l/2-1;j>=0;j--){
+            tempimg.setPixel(i,j,tempimg.pixel(i,l/2));
+        }
+    }
+    for(int i=0;i<w+l-1;i++){
+        for(int j=h+l/2-1;j<h+l-1;j++){
+            tempimg.setPixel(i,j,tempimg.pixel(i,h+l/2-1));
+        }
+    }
+
+    for(int i=l/2;i<w+l/2;i++){
+        for(int j=l/2;j<h+l/2;j++){
+            QRect rect(i-l/2,j-l/2,l,l);
+            QImage patch=tempimg.copy(rect);
+            vector<int> data;
+            for(int k=0;k<l*l;k++){
+                data.push_back(qGray(patch.pixel(k/l,k%l)));
+            }
+            std::sort(data.begin(),data.end());
+            ret.setPixel(i-l/2,j-l/2,qRgb(data.back(),data.back(),data.back()));
         }
     }
 

@@ -33,7 +33,8 @@ SOURCES += \
     contrastc.cpp \
     diglinear.cpp \
     gauss.cpp \
-    bilateral.cpp
+    bilateral.cpp \
+    filtersize.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
     contrastc.h \
     diglinear.h \
     gauss.h \
-    bilateral.h
+    bilateral.h \
+    filtersize.h
 
 FORMS += \
         mainwindow.ui \
@@ -51,7 +53,8 @@ FORMS += \
     contrastc.ui \
     diglinear.ui \
     gauss.ui \
-    bilateral.ui
+    bilateral.ui \
+    filtersize.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -26,6 +26,10 @@ public:
     static QImage GaussTransform(const QImage& img,int l,double s);
     static QImage BilateralTransform(const QImage& img,int l,double s,double s1);
     static void normalizeKernal(std::vector<double>&);
+
+    static QImage MedianTransform(const QImage& img,int l);
+    static QImage ErodingTransform(const QImage& img,int l);
+    static QImage DilatingTransform(const QImage& img,int l);
 };
 
 #endif // IMAGEPROCESSOR_H

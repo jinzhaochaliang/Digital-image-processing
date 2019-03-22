@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogT</class>
- <widget class="QDialog" name="DialogT">
+ <class>FilterSize</class>
+ <widget class="QDialog" name="FilterSize">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>472</width>
-    <height>301</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>参数：</string>
+        <string>SIZE</string>
        </property>
       </widget>
      </item>
@@ -44,24 +44,8 @@
  <connections>
   <connection>
    <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>DialogT</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogT</receiver>
+   <receiver>FilterSize</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -70,6 +54,22 @@
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>FilterSize</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
      <y>274</y>
     </hint>
    </hints>

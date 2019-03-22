@@ -11,6 +11,7 @@
 #include "diglinear.h"
 #include "gauss.h"
 #include "bilateral.h"
+#include "filtersize.h"
 #include <vector>
 
 namespace Ui {
@@ -43,8 +44,11 @@ private:
     DigLinear *digLinear;
     Gauss *gauss;
     Bilateral *bilateral;
+    FilterSize *filtersize;
 
     void normalizeKernal(std::vector<double>&);
+
+    std::string filtertype;
 
 
 public slots:
@@ -70,6 +74,10 @@ public slots:
     void on_Gauss_confirmed(int,double);
     void on_Bilateral_confirmed(int,double,double);
 
+    void on_actionMedian_triggered();
+    void on_actionEroding_triggered();
+    void on_actionDilating_triggered();
+    void on_FilterSize_confirmed(int);
 };
 
 #endif // MAINWINDOW_H

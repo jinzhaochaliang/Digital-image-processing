@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     contrast(new ContrastC(this)),
     digLinear(new DigLinear(this)),
     gauss(new Gauss(this)),
-    bilateral(new Bilateral(this))
+    bilateral(new Bilateral(this)),
+    filtersize(new FilterSize(this))
 {
     fd->setNameFilter("Images (*.png *.bmp *.jpg *.gif)");
     fd->setFileMode(QFileDialog::ExistingFile);
@@ -27,6 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete filtersize;
+    delete bilateral;
+    delete gauss;
+    delete digLinear;
     delete contrast;
     delete dialog;
     delete pitem;
@@ -240,5 +245,35 @@ void MainWindow::on_Bilateral_confirmed(int l,double s,double s1){
     if(!pitem) return;
     QImage image = getCurrentImage();
     image = ImageProcessor::BilateralTransform(image,l,s,s1);
+    showImage(image);
+}
+
+void MainWindow::on_actionMedian_triggered(){
+    filtertype = "median";
+    filtersize->exec();
+}
+void MainWindow::on_actionEroding_triggered(){
+    filtertype = "eroding";
+    filtersize->exec();
+}
+void MainWindow::on_actionDilating_triggered(){
+    filtertype = "dilating";
+    filtersize->exec();
+}
+void MainWindow::on_FilterSize_confirmed(int l){
+//    qDebug()<<l;
+    if(!pitem) return;
+    QImage image = getCurrentImage();
+//    image = ImageProcessor::BilateralTransform(image,l,s,s1);
+    if(filtertype=="median"){
+        qDebug()<<"1";
+        image = ImageProcessor::MedianTransform(image,l);
+    }else if(filtertype=="eroding"){
+        qDebug()<<"2";
+        image = ImageProcessor::ErodingTransform(image,l);
+    }else if(filtertype=="dilating"){
+        qDebug()<<"3";
+        image = ImageProcessor::DilatingTransform(image,l);
+    }
     showImage(image);
 }
