@@ -81,8 +81,39 @@ public:
 //    friend Matrix<T> operator-(Matrix<T>& mat,Matrix<T>& mat);
 //    friend Matrix<T> operator*(Matrix<T>& mat,Matrix<T>& mat);
 //    friend Matrix<T> operator/(Matrix<T>& mat,Matrix<T>& mat);
+
+    Matrix<T> conv(Matrix<T>& mat2);
 };
 
+template <typename T>
+Matrix<T> Matrix<T>::conv(Matrix<T>& mat2){
+    size_t r = mat2._nRow;
+    size_t c = mat2._nCol;
+    Matrix<T> m(mat2);
+    for(size_t i=0;i<r;++i){
+        for(size_t j=0;j<c;++j){
+            mat2(i,j) = m(r-1-i,c-1-j);
+        }
+    }
+    Matrix<T> temp(_nRow+r-1,_nCol+c-1,0);
+    for(size_t i=0;i<_nRow;++i){
+        for(size_t j=0;j<_nCol;++j){
+            temp(i+(r-1)/2,j+(c-1)/2) = this->operator()(i,j);
+        }
+    }
+    for(size_t i=0;i<_nRow;++i){
+        for(size_t j=0;j<_nCol;++j){
+            size_t sum = 0;
+            for(size_t k1=0;k1<r;k1++){
+                for(size_t k2=0;k2<c;k2++){
+                    sum += temp(i+k1,j+k2)*mat2(k1,k2);
+                }
+            }
+            this->operator()(i,j) = sum;
+        }
+    }
+    return *this;
+}
 //矩阵相加
 template<typename T>
 Matrix<T> Matrix<T>::operator+(Matrix<T>& mat){
