@@ -318,7 +318,7 @@ void MainWindow::on_Transform_confirmed(Matrix<double> temp){
 //    cout<<temp.inverted(temp);
 //    cout<<temp*temp.inverted(temp);
 
-    Matrix<double> tempt = temp.inverted(temp);
+    Matrix<double> tempt = temp.inverted3(temp);
     cout<<tempt;
     cout<<temp*tempt;
 
@@ -361,7 +361,7 @@ void MainWindow::on_Transform_confirmed(Matrix<double> temp){
                 img.setPixel(i,j,qRgb(0,0,0));
                 continue;
             }
-            img.setPixel(i,j,image.pixel(floor(mat(0,0)),floor(mat(0,1))));
+//            img.setPixel(i,j,image.pixel(floor(mat(0,0)),floor(mat(0,1))));
             Matrix<double> m1(2,2,0);
             double x = mat(0,0);
             double y = mat(0,1);

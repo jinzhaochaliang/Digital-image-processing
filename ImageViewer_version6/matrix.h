@@ -86,10 +86,10 @@ public:
     QImage toQImage(const Matrix<int>&);
     QImage toQImage(const Matrix<int>&,const Matrix<int>&,const Matrix<int>&);
     Matrix<T>& fftshift();
-    Matrix<T> inverted(Matrix<T>&);
+    Matrix<T> inverted3(Matrix<T>&);
 };
 template <typename T>
-Matrix<T> Matrix<T>::inverted(Matrix<T>& mat){
+Matrix<T> Matrix<T>::inverted3(Matrix<T>& mat){
     T a1 = mat(0,0);
     T a2 = mat(1,0);
     T a3 = mat(2,0);
