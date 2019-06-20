@@ -76,17 +76,13 @@ vector<complex<double>> fft(vector<complex<double> > data, size_t N) {
     // 1. split input into two parts
     // 2. do fft on them seperately
     // 3. construct result from output
-    vector<complex<double> > temp = data;
-    if(data.size()==calcN(N)){
-        N = calcN(data.size());
-//        data.assign(data.begin(),data.begin()+N);
-    }else if(data.size()>calcN(N)){
-        N = calcN(data.size());
-        data.assign(temp.begin(),temp.begin()+N);
-    }else{
-        N = calcN(N);
-        data.assign(temp.begin(),temp.begin()+N);
+    size_t len=calcN(N);
+    if (N<len){
+        for (int i=0;i<len-N;++i){
+            data.push_back(0);
+        }
     }
+    N = len;
     if(N==0||N==1){
         return data;
     }else if(N==2){
